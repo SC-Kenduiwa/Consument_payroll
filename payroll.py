@@ -18,3 +18,21 @@ class SalesPerson:
         elif 50000 <= self.sales_amount < 200000:
             self.commission = self.sales_amount * 0.05
         # sales below 50k => no commission or bonus
+class PayrollSystem:
+    def __init__(self):
+        self.salespeople = []
+
+    def add_salesperson(self, person):
+        self.salespeople.append(person)
+
+    def process_payroll(self):
+        for person in self.salespeople:
+            person.calculate_pay()
+
+    def print_report(self):
+        total_commission = 0
+        print("----- Payroll Report -----")
+        for person in self.salespeople:
+            print(person)
+            total_commission += person.commission
+        print(f"\nTotal Commission Paid Out: KES {total_commission}")
