@@ -36,3 +36,38 @@ class PayrollSystem:
             print(person)
             total_commission += person.commission
         print(f"\nTotal Commission Paid Out: KES {total_commission}")
+def main():
+    payroll = PayrollSystem()
+
+    test_data = [
+        ("Alice", 510000),
+        ("Bob", 475000),
+        ("Carol", 330000),
+        ("Dan", 60000),
+        ("Eve", 45000),
+        ("Faith", 200000),
+        ("George", 150000),
+        ("Hannah", 300000),
+        ("Ian", 550000),
+        ("Jane", 490000),
+        ("Kevin", 349999),
+        ("Liam", 55000),
+        ("Mona", 51000),
+        ("Nora", 345000),
+        ("Oscar", 180000),
+        ("Paul", 90000),
+        ("Queen", 250000),
+        ("Ron", 499999),
+        ("Sarah", 198000),
+        ("Tom", 10000)
+    ]
+
+    for name, sales in test_data:
+        person = SalesPerson(name, sales)
+        payroll.add_salesperson(person)
+
+    payroll.process_payroll()
+    payroll.print_report()
+
+if __name__ == "__main__":
+    main()
