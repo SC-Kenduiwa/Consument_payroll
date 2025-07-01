@@ -71,3 +71,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+def secure_access():
+    password = "consumet@2025"
+    attempt = input("Enter system password: ")
+    if attempt != password:
+        print("Access denied!")
+        exit()
+
+# Call before main
+if __name__ == "__main__":
+    secure_access()
+    main()
